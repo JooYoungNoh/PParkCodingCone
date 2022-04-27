@@ -96,7 +96,7 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
         //내용을 최대 10자리까지 읽어 subject 변수에 저장
         let contents = textView.text as NSString
         self.writeLength = contents.length
-        let length = contents.length > 10 ? 10 : contents.length
+        let length = contents.length > 28 ? 28 : contents.length
         self.subject = contents.substring(with: NSRange(location: 0, length: length))
         
         self.numberLabel.text = "Number of characters : \(String(describing: contents.length))"
