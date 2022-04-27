@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemoWriteVC: UIViewController {
+class MemoWriteVC: UIViewController, UITextViewDelegate {
     var subject: String!        //제목 저장 객체
     
     @IBOutlet var contents: UITextView!
@@ -17,7 +17,7 @@ class MemoWriteVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.contents.delegate = self
     }
     
     //MARK: 아웃렛 메소드
@@ -29,6 +29,16 @@ class MemoWriteVC: UIViewController {
         
     }
     
+    //MARK: 텍스트 뷰 메소드
+    //사용자가 텍스트 뷰에 입력 시 호출되는 메소드
+    func textViewDidChange(_ textView: UITextView) {
+        //내용을 최대 10자리까지 읽어 subject 변수에 저장
+        let contents = textView.text as NSString
+        let length = contents.length > 10 ? 10 : contents.length
+        self.subject = contents.substring(with: NSRange(location: 0, length: length))
+        
+        
+    }
 
     /*
     // MARK: - Navigation
