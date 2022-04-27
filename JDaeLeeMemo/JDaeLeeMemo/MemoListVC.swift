@@ -48,9 +48,35 @@ class MemoListVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = self.appDelegate.memolist[indexPath.row]
         
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemoReadVC") as? MemoReadVC else { return }
+        if row.secret == true{
+            let alert = UIAlertController(title: "비밀번호를 입력하세요", message: nil, preferredStyle: .alert)
+            
+            alert.addTextField(){ (tf) in
+                tf.placeholder = "비밀번호"
+            }
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            alert.addAction(UIAlertAction(title: "OK", style: .default){ (_) in
+                if alert.textFields?[0].text == row.number {
+                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemoReadVC") as? MemoReadVC else { return }
+                
+                    vc.param = row
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    let alert2 = UIAlertController(title: nil, message: "비밀번호가 다릅니다.", preferredStyle: .alert)
+                    
+                    alert2.addAction(UIAlertAction(title: "OK", style: .cancel))
+                    
+                    self.present(alert2, animated: false)
+                }
+            })
+            
+            self.present(alert, animated: false)
+        } else {
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemoReadVC") as? MemoReadVC else { return }
         
-        vc.param = row
-        self.navigationController?.pushViewController(vc, animated: true)
+            vc.param = row
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
