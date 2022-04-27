@@ -8,9 +8,24 @@
 import UIKit
 
 class MemoWriteVC: UIViewController {
+    var subject: String!        //제목 저장 객체
+    
+    @IBOutlet var contents: UITextView!
+    @IBOutlet var secretSwich: UISwitch!
+    @IBOutlet var secretLabel: UILabel!
+    @IBOutlet var numberLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    //MARK: 아웃렛 메소드
+    @IBAction func save(_ sender: UIBarButtonItem){
+        
+    }
+    
+    @IBAction func changeSwich(_ sender: UISwitch){
         
     }
     
