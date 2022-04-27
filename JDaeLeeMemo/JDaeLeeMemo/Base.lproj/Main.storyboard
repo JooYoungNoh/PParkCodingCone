@@ -175,19 +175,19 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XYu-1Q-DKy">
-                                <rect key="frame" x="331" y="103" width="51" height="30"/>
+                                <rect key="frame" x="321" y="103" width="51" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YXo-p6-pyR"/>
                                 </constraints>
                             </switch>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secret Deactivation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckj-3f-W6f">
-                                <rect key="frame" x="202" y="103" width="119" height="15.666666666666671"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secret Deactivation" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckj-3f-W6f">
+                                <rect key="frame" x="212" y="103" width="99" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of characters : 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAI-Si-iHS">
-                                <rect key="frame" x="10" y="103" width="170" height="15.666666666666671"/>
+                                <rect key="frame" x="20" y="106" width="170" height="15.666666666666671"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="FSX-tg-6Yx"/>
                                 </constraints>
@@ -201,19 +201,25 @@
                         <constraints>
                             <constraint firstItem="Ckj-3f-W6f" firstAttribute="leading" secondItem="BAI-Si-iHS" secondAttribute="trailing" constant="22" id="9oh-Uh-VeS"/>
                             <constraint firstItem="XYu-1Q-DKy" firstAttribute="top" secondItem="Wrd-N4-G19" secondAttribute="top" constant="15" id="LtB-DD-rJN"/>
-                            <constraint firstItem="Wrd-N4-G19" firstAttribute="trailing" secondItem="XYu-1Q-DKy" secondAttribute="trailing" constant="10" id="N2p-UJ-Z5o"/>
+                            <constraint firstItem="Wrd-N4-G19" firstAttribute="trailing" secondItem="XYu-1Q-DKy" secondAttribute="trailing" constant="20" id="N2p-UJ-Z5o"/>
                             <constraint firstItem="XYu-1Q-DKy" firstAttribute="leading" secondItem="Ckj-3f-W6f" secondAttribute="trailing" constant="10" id="PZd-UZ-7oG"/>
                             <constraint firstItem="Wrd-N4-G19" firstAttribute="bottom" secondItem="ltm-DN-cef" secondAttribute="bottom" constant="300" id="Shb-x7-elQ"/>
                             <constraint firstItem="ltm-DN-cef" firstAttribute="leading" secondItem="Wrd-N4-G19" secondAttribute="leading" constant="20" id="T3C-Fo-YDF"/>
-                            <constraint firstItem="BAI-Si-iHS" firstAttribute="top" secondItem="Wrd-N4-G19" secondAttribute="top" constant="15" id="TVX-kr-KUi"/>
+                            <constraint firstItem="BAI-Si-iHS" firstAttribute="top" secondItem="Wrd-N4-G19" secondAttribute="top" constant="18" id="TVX-kr-KUi"/>
                             <constraint firstItem="Ckj-3f-W6f" firstAttribute="top" secondItem="Wrd-N4-G19" secondAttribute="top" constant="15" id="dQd-Fl-hao"/>
                             <constraint firstItem="Wrd-N4-G19" firstAttribute="trailing" secondItem="ltm-DN-cef" secondAttribute="trailing" constant="20" id="f4m-6G-xSe"/>
-                            <constraint firstItem="BAI-Si-iHS" firstAttribute="leading" secondItem="Wrd-N4-G19" secondAttribute="leading" constant="10" id="g6x-DZ-5KV"/>
+                            <constraint firstItem="BAI-Si-iHS" firstAttribute="leading" secondItem="Wrd-N4-G19" secondAttribute="leading" constant="20" id="g6x-DZ-5KV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="메모 내용" id="cO3-J6-ZLI">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="FBd-gL-qHz"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contents" destination="ltm-DN-cef" id="pFk-Ip-glk"/>
+                        <outlet property="numberLabel" destination="BAI-Si-iHS" id="ZMK-vs-59M"/>
+                        <outlet property="secretLabel" destination="Ckj-3f-W6f" id="jIw-Af-Sop"/>
+                        <outlet property="secretSwich" destination="XYu-1Q-DKy" id="ePI-9x-kpF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgX-H9-XUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
