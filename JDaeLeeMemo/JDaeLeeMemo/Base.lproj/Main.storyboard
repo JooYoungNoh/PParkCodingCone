@@ -22,7 +22,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MemoCell" rowHeight="60" id="Bjg-pH-kH6" customClass="MemoCell" customModule="JDaeLeeMemo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" rowHeight="60" id="Bjg-pH-kH6" customClass="MemoCell" customModule="JDaeLeeMemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bjg-pH-kH6" id="AKY-uI-7am">
@@ -30,7 +30,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글 내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUT-9J-sZr">
-                                            <rect key="frame" x="25" y="19" width="200" height="22"/>
+                                            <rect key="frame" x="25" y="11" width="200" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="UbR-ee-V3a"/>
                                                 <constraint firstAttribute="height" constant="22" id="uZH-GT-vOE"/>
@@ -40,16 +40,16 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성일자 1990-12-01" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5K-nm-cjv">
-                                            <rect key="frame" x="265" y="16" width="88.333333333333314" height="28.666666666666671"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <rect key="frame" x="265" y="11" width="88.333333333333314" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Y5K-nm-cjv" firstAttribute="top" secondItem="AKY-uI-7am" secondAttribute="topMargin" constant="5" id="3e2-RK-4Fh"/>
+                                        <constraint firstItem="Y5K-nm-cjv" firstAttribute="top" secondItem="AKY-uI-7am" secondAttribute="topMargin" id="3e2-RK-4Fh"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Y5K-nm-cjv" secondAttribute="trailing" id="FV0-wT-1Dv"/>
-                                        <constraint firstItem="PUT-9J-sZr" firstAttribute="top" secondItem="AKY-uI-7am" secondAttribute="topMargin" constant="8" id="Gn4-vd-cGh"/>
+                                        <constraint firstItem="PUT-9J-sZr" firstAttribute="top" secondItem="AKY-uI-7am" secondAttribute="topMargin" id="Gn4-vd-cGh"/>
                                         <constraint firstItem="Y5K-nm-cjv" firstAttribute="leading" secondItem="PUT-9J-sZr" secondAttribute="trailing" constant="40" id="UoF-sL-vlG"/>
                                         <constraint firstItem="PUT-9J-sZr" firstAttribute="leading" secondItem="AKY-uI-7am" secondAttribute="leadingMargin" constant="5" id="xcW-3c-nYa"/>
                                     </constraints>
