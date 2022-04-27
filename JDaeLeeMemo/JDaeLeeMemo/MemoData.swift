@@ -13,5 +13,6 @@ class MemoData{
     var contents: String?
     var regdate: Date?
     var writelength: Int?
+    var secret: Bool?
     
 }

@@ -8,8 +8,9 @@
 import UIKit
 
 class MemoWriteVC: UIViewController, UITextViewDelegate {
-    var subject: String!        //제목 저장 객체
-    var writeLength: Int!       //글자 수
+    var subject: String!              //제목 저장 객체
+    var writeLength: Int!             //글자 수
+    var secretState: Bool! = false    //비밀메모 상태
     
     @IBOutlet var contents: UITextView!
     @IBOutlet var secretSwich: UISwitch!
@@ -19,6 +20,9 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.contents.delegate = self
+        self.secretLabel.text = "Secret Deactivation"
+        self.secretLabel.textColor = UIColor.red
+        self.secretSwich.isOn = false
     }
     
     //MARK: 아웃렛 메소드
@@ -40,6 +44,7 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
         data.contents = self.contents.text
         data.regdate = Date()
         data.writelength = self.writeLength
+        data.secret = self.secretState
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.memolist.append(data)
@@ -48,7 +53,25 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func changeSwich(_ sender: UISwitch){
-        
+        if self.secretSwich.isOn == true {
+            let alert = UIAlertController(title: "비밀번호를 입력해주세요.", message: nil, preferredStyle: .alert)
+            
+            alert.addTextField(){ (tf) in
+                tf.placeholder = "비밀번호"
+            }
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            alert.addAction(UIAlertAction(title: "OK", style: .default){ (_) in
+                let secretText = alert.textFields?[0].text
+                self.secretLabel.text = "Secret Activation \n" + "비밀번호: \(secretText!)"
+                self.secretLabel.textColor = UIColor.blue
+                self.secretState = true
+            })
+            self.present(alert, animated: false)
+        } else {
+            self.secretLabel.text = "Secret Deactivation"
+            self.secretState = false
+        }
     }
     
     //MARK: 텍스트 뷰 메소드
