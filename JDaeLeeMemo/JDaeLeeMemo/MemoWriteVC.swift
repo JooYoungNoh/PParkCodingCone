@@ -22,7 +22,27 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
     
     //MARK: 아웃렛 메소드
     @IBAction func save(_ sender: UIBarButtonItem){
+        guard self.contents.text?.isEmpty == false else {
+            let alert = UIAlertController(title: nil, message: "내용이 입력되지 않았습니다.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .cancel)
+            
+            alert.addAction(okAction)
+            self.present(alert, animated: false)
+            
+            return
+        }
         
+        let data = MemoData()
+        
+        data.title = self.subject
+        data.contents = self.contents.text
+        data.regdate = Date()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memolist.append(data)
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func changeSwich(_ sender: UISwitch){
