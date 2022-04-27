@@ -106,14 +106,14 @@
                                     <action selector="changeSwich:" destination="yFA-YK-Juw" eventType="valueChanged" id="4lb-XY-oLR"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secret Deactivation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nj4-dL-Dr4">
-                                <rect key="frame" x="202" y="103" width="119" height="15.666666666666671"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secret Deactivation" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nj4-dL-Dr4">
+                                <rect key="frame" x="202" y="103" width="119" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of characters :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIn-t6-X8C">
-                                <rect key="frame" x="10" y="103" width="170" height="16"/>
+                                <rect key="frame" x="10" y="106" width="170" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="FZJ-eB-hVI"/>
                                 </constraints>
@@ -127,7 +127,7 @@
                         <constraints>
                             <constraint firstItem="via-ZY-ahs" firstAttribute="trailing" secondItem="DvX-Jm-FCL" secondAttribute="trailing" constant="20" id="1E2-nW-IcG"/>
                             <constraint firstItem="DvX-Jm-FCL" firstAttribute="leading" secondItem="via-ZY-ahs" secondAttribute="leading" constant="20" id="1h7-Gh-qgF"/>
-                            <constraint firstItem="KIn-t6-X8C" firstAttribute="top" secondItem="via-ZY-ahs" secondAttribute="top" constant="15" id="Nhr-pk-y6R"/>
+                            <constraint firstItem="KIn-t6-X8C" firstAttribute="top" secondItem="via-ZY-ahs" secondAttribute="top" constant="18" id="Nhr-pk-y6R"/>
                             <constraint firstItem="via-ZY-ahs" firstAttribute="trailing" secondItem="hgm-7R-ja2" secondAttribute="trailing" constant="10" id="Swu-jh-W1D"/>
                             <constraint firstItem="nj4-dL-Dr4" firstAttribute="top" secondItem="via-ZY-ahs" secondAttribute="top" constant="15" id="U5b-Y4-5TS"/>
                             <constraint firstItem="hgm-7R-ja2" firstAttribute="leading" secondItem="nj4-dL-Dr4" secondAttribute="trailing" constant="10" id="VUw-19-ySB"/>
