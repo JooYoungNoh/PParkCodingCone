@@ -9,6 +9,7 @@ import UIKit
 
 class MemoWriteVC: UIViewController, UITextViewDelegate {
     var subject: String!        //제목 저장 객체
+    var writeLength: Int!       //글자 수
     
     @IBOutlet var contents: UITextView!
     @IBOutlet var secretSwich: UISwitch!
@@ -38,6 +39,7 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
         data.title = self.subject
         data.contents = self.contents.text
         data.regdate = Date()
+        data.writelength = self.writeLength
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.memolist.append(data)
@@ -54,20 +56,13 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         //내용을 최대 10자리까지 읽어 subject 변수에 저장
         let contents = textView.text as NSString
+        self.writeLength = contents.length
         let length = contents.length > 10 ? 10 : contents.length
         self.subject = contents.substring(with: NSRange(location: 0, length: length))
         
+        self.numberLabel.text = "Number of characters : \(String(describing: contents.length))"
+        
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
