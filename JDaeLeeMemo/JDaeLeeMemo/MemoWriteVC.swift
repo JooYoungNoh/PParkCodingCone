@@ -11,6 +11,7 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
     var subject: String!              //제목 저장 객체
     var writeLength: Int!             //글자 수
     var secretState: Bool! = false    //비밀메모 상태
+    var number: String! = nil         //비밀번호
     
     @IBOutlet var contents: UITextView!
     @IBOutlet var secretSwich: UISwitch!
@@ -37,7 +38,7 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
             
             return
         }
-        
+        //저장할 것
         let data = MemoData()
         
         data.title = self.subject
@@ -45,7 +46,9 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
         data.regdate = Date()
         data.writelength = self.writeLength
         data.secret = self.secretState
+        data.number = self.number
         
+        //배열에 추가
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.memolist.append(data)
         
@@ -60,16 +63,29 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
                 tf.placeholder = "비밀번호"
             }
             
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel){ (_) in
+                self.secretSwich.isOn = false
+                self.secretState = false
+                self.number = nil
+            })
+            
             alert.addAction(UIAlertAction(title: "OK", style: .default){ (_) in
+                //레이블 변경
                 let secretText = alert.textFields?[0].text
                 self.secretLabel.text = "Secret Activation \n" + "비밀번호: \(secretText!)"
                 self.secretLabel.textColor = UIColor.blue
+                
+                self.number = secretText
                 self.secretState = true
             })
             self.present(alert, animated: false)
         } else {
+            //레이블 변경
             self.secretLabel.text = "Secret Deactivation"
+            self.secretLabel.textColor = UIColor.red
+            
+            //저장할 변수
+            self.number = nil
             self.secretState = false
         }
     }
