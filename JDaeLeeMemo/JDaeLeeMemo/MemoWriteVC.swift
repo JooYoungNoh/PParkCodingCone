@@ -13,10 +13,10 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
     var secretState: Bool! = false    //비밀메모 상태
     var number: String! = nil         //비밀번호
     
-    @IBOutlet var contents: UITextView!
-    @IBOutlet var secretSwich: UISwitch!
-    @IBOutlet var secretLabel: UILabel!
-    @IBOutlet var numberLabel: UILabel!
+    @IBOutlet weak var contents: UITextView!
+    @IBOutlet weak var secretSwich: UISwitch!
+    @IBOutlet weak var secretLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
