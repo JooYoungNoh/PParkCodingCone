@@ -39,4 +39,9 @@ class MemoReadVC: UIViewController {
         
     }
     
+    //MARK: 아웃렛 메소드
+    @IBAction func writeEdit(_ sender: UIBarButtonItem){
+        
+    }
+    
 }
