@@ -8,7 +8,6 @@
 import UIKit
 
 class MemoData{
-    var memoIdx: Int?
     var title: String?          //리스트에 표시될 타이틀
     var contents: String?       //글 내용
     var regdate: Date?          //작성일자
