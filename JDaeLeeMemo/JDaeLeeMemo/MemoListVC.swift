@@ -31,7 +31,11 @@ class MemoListVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memoCell", for: indexPath) as! MemoCell
         
         //타이틀 레이블
-        cell.titleLabel?.text = row.title
+        if row.secret == true {
+            cell.titleLabel?.text = "🔐 비밀메모입니다."
+        } else {
+            cell.titleLabel?.text = row.title
+        }
         
         //날짜 레이블
         let formatter = DateFormatter()
