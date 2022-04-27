@@ -17,6 +17,7 @@
 		739CF1582819B5A600AFC171 /* MemoWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739CF1572819B5A600AFC171 /* MemoWriteVC.swift */; };
 		739CF15A2819B5EA00AFC171 /* MemoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739CF1592819B5EA00AFC171 /* MemoListVC.swift */; };
 		739CF15C2819C6E900AFC171 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739CF15B2819C6E900AFC171 /* MemoCell.swift */; };
+		739CF15E2819CE6500AFC171 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739CF15D2819CE6500AFC171 /* MemoData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		739CF1572819B5A600AFC171 /* MemoWriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWriteVC.swift; sourceTree = "<group>"; };
 		739CF1592819B5EA00AFC171 /* MemoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListVC.swift; sourceTree = "<group>"; };
 		739CF15B2819C6E900AFC171 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		739CF15D2819CE6500AFC171 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				739CF1592819B5EA00AFC171 /* MemoListVC.swift */,
 				739CF1552819B59300AFC171 /* MemoReadVC.swift */,
 				739CF1572819B5A600AFC171 /* MemoWriteVC.swift */,
+				739CF15D2819CE6500AFC171 /* MemoData.swift */,
 				739CF14A2819AFED00AFC171 /* Assets.xcassets */,
 				739CF14C2819AFED00AFC171 /* LaunchScreen.storyboard */,
 				739CF14F2819AFED00AFC171 /* Info.plist */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				739CF15C2819C6E900AFC171 /* MemoCell.swift in Sources */,
+				739CF15E2819CE6500AFC171 /* MemoData.swift in Sources */,
 				739CF15A2819B5EA00AFC171 /* MemoListVC.swift in Sources */,
 				739CF1492819AFEC00AFC171 /* JDaeLeeMemo.xcdatamodeld in Sources */,
 				739CF13F2819AFEC00AFC171 /* AppDelegate.swift in Sources */,
