@@ -15,6 +15,7 @@ class MemoReadVC: UIViewController {
     @IBOutlet weak var secretSwich: UISwitch!
     @IBOutlet weak var secretLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var barButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,6 @@ class MemoReadVC: UIViewController {
         //문장 수
         self.numberLabel.text = "Number of characters : \(String(describing: (param?.writelength)!))"
         
-        //에디트 액션 버튼으로 가야됨
         //비밀 여부
         if param?.secret == true {
             self.secretSwich.isOn = true
@@ -41,7 +41,19 @@ class MemoReadVC: UIViewController {
     
     //MARK: 아웃렛 메소드
     @IBAction func writeEdit(_ sender: UIBarButtonItem){
-        
+        if self.barButton.title == "편집" {
+            self.barButton.title = "완료"
+            self.secretLabel.isHidden = false
+            self.numberLabel.isHidden = false
+            self.secretSwich.isHidden = false
+        } else {
+            
+            
+            self.barButton.title = "편집"
+            self.secretLabel.isHidden = true
+            self.numberLabel.isHidden = true
+            self.secretSwich.isHidden = true
+        }
     }
     
 }

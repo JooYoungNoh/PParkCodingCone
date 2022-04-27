@@ -214,13 +214,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="메모 내용" id="cO3-J6-ZLI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="FBd-gL-qHz">
+                        <barButtonItem key="rightBarButtonItem" title="편집" id="FBd-gL-qHz">
                             <connections>
                                 <action selector="writeEdit:" destination="0vj-th-8aU" id="VR0-qg-08s"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="barButton" destination="FBd-gL-qHz" id="a7g-EM-m8P"/>
                         <outlet property="contents" destination="ltm-DN-cef" id="pFk-Ip-glk"/>
                         <outlet property="numberLabel" destination="BAI-Si-iHS" id="ZMK-vs-59M"/>
                         <outlet property="secretLabel" destination="Ckj-3f-W6f" id="jIw-Af-Sop"/>
