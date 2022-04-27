@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		736C3F342819FF7500E01FEA /* MemoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736C3F332819FF7500E01FEA /* MemoDAO.swift */; };
 		739CF13F2819AFEC00AFC171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739CF13E2819AFEC00AFC171 /* AppDelegate.swift */; };
 		739CF1412819AFEC00AFC171 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739CF1402819AFEC00AFC171 /* SceneDelegate.swift */; };
 		739CF1462819AFEC00AFC171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739CF1442819AFEC00AFC171 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		736C3F332819FF7500E01FEA /* MemoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDAO.swift; sourceTree = "<group>"; };
 		739CF13B2819AFEC00AFC171 /* JDaeLeeMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JDaeLeeMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		739CF13E2819AFEC00AFC171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		739CF1402819AFEC00AFC171 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				739CF1552819B59300AFC171 /* MemoReadVC.swift */,
 				739CF1572819B5A600AFC171 /* MemoWriteVC.swift */,
 				739CF15D2819CE6500AFC171 /* MemoData.swift */,
+				736C3F332819FF7500E01FEA /* MemoDAO.swift */,
 				739CF14A2819AFED00AFC171 /* Assets.xcassets */,
 				739CF14C2819AFED00AFC171 /* LaunchScreen.storyboard */,
 				739CF14F2819AFED00AFC171 /* Info.plist */,
@@ -160,6 +163,7 @@
 				739CF13F2819AFEC00AFC171 /* AppDelegate.swift in Sources */,
 				739CF1562819B59300AFC171 /* MemoReadVC.swift in Sources */,
 				739CF1412819AFEC00AFC171 /* SceneDelegate.swift in Sources */,
+				736C3F342819FF7500E01FEA /* MemoDAO.swift in Sources */,
 				739CF1582819B5A600AFC171 /* MemoWriteVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
