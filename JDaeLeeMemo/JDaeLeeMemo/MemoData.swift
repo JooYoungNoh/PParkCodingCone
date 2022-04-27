@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class MemoData{
     var title: String?          //리스트에 표시될 타이틀
@@ -15,8 +14,5 @@ class MemoData{
     var writelength: Int?       //글자 수
     var secret: Bool?           //비밀 여부
     var number: String?         //비밀번호
-    
-    //MemoMO 객체를 참조하기 위한 속성
-    var objectID: NSManagedObjectID?
     
 }
