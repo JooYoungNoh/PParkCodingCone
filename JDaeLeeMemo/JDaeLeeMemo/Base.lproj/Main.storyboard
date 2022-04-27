@@ -57,7 +57,6 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="Y5K-nm-cjv" id="Nb5-eu-mGa"/>
                                     <outlet property="titleLabel" destination="PUT-9J-sZr" id="BoA-dP-hP1"/>
-                                    <segue destination="0vj-th-8aU" kind="show" id="VuF-L9-drJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -73,6 +72,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="0vj-th-8aU" kind="show" id="qdA-P7-cNl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASA-Ow-YXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
