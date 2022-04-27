@@ -16,6 +16,7 @@
 		739CF1562819B59300AFC171 /* MemoReadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739CF1552819B59300AFC171 /* MemoReadVC.swift */; };
 		739CF1582819B5A600AFC171 /* MemoWriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739CF1572819B5A600AFC171 /* MemoWriteVC.swift */; };
 		739CF15A2819B5EA00AFC171 /* MemoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739CF1592819B5EA00AFC171 /* MemoListVC.swift */; };
+		739CF15C2819C6E900AFC171 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739CF15B2819C6E900AFC171 /* MemoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		739CF1552819B59300AFC171 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
 		739CF1572819B5A600AFC171 /* MemoWriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWriteVC.swift; sourceTree = "<group>"; };
 		739CF1592819B5EA00AFC171 /* MemoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListVC.swift; sourceTree = "<group>"; };
+		739CF15B2819C6E900AFC171 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				739CF13E2819AFEC00AFC171 /* AppDelegate.swift */,
 				739CF1402819AFEC00AFC171 /* SceneDelegate.swift */,
 				739CF1442819AFEC00AFC171 /* Main.storyboard */,
+				739CF15B2819C6E900AFC171 /* MemoCell.swift */,
 				739CF1592819B5EA00AFC171 /* MemoListVC.swift */,
 				739CF1552819B59300AFC171 /* MemoReadVC.swift */,
 				739CF1572819B5A600AFC171 /* MemoWriteVC.swift */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				739CF15C2819C6E900AFC171 /* MemoCell.swift in Sources */,
 				739CF15A2819B5EA00AFC171 /* MemoListVC.swift in Sources */,
 				739CF1492819AFEC00AFC171 /* JDaeLeeMemo.xcdatamodeld in Sources */,
 				739CF13F2819AFEC00AFC171 /* AppDelegate.swift in Sources */,
