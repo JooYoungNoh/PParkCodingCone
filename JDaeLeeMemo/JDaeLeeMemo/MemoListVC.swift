@@ -10,6 +10,8 @@ import UIKit
 class MemoListVC: UITableViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
+    lazy var dao = MemoDAO()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
@@ -19,6 +21,8 @@ class MemoListVC: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.appDelegate.memolist = self.dao.fetch()
         self.tableView.reloadData()
     }
 
@@ -88,8 +92,12 @@ class MemoListVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let data = self.appDelegate.memolist[indexPath.row]
         
-        self.appDelegate.memolist.remove(at: indexPath.row)
-        self.tableView.deleteRows(at: [indexPath], with: .fade)
+        //코어데이터 삭제 후 배열 내 데이터 및 테이블 뷰 행을 삭제
+        if dao.delete(data.objectID!){
+            self.appDelegate.memolist.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }

@@ -13,6 +13,8 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
     var secretState: Bool! = false    //비밀메모 상태
     var number: String! = nil         //비밀번호
     
+    lazy var dao = MemoDAO()
+    
     @IBOutlet weak var contents: UITextView!
     @IBOutlet weak var secretSwich: UISwitch!
     @IBOutlet weak var secretLabel: UILabel!
@@ -48,9 +50,9 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
         data.secret = self.secretState
         data.number = self.number
         
-        //배열에 추가
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.memolist.append(data)
+        //코어 데이터에 메모 데이터 추가
+        self.dao
+            .insert(data)
         
         self.navigationController?.popViewController(animated: true)
     }
