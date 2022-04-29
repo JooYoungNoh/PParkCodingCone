@@ -43,7 +43,7 @@ class MemoListVC: UITableViewController {
         //날짜 레이블
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        cell.dateLabel?.text = formatter.string(from: row.regdate!)
+        cell.dateLabel?.text = "\(formatter.string(from: row.regdate!)) 작성됨"
         
         return cell
     }
