@@ -23,7 +23,7 @@ class MemoReadVC: UIViewController {
         self.contents.text = param?.contents
         
         //문장 수
-        self.numberLabel.text = "Number of characters : \(String(describing: (param?.writelength)!))"
+        self.numberLabel.text = "Number of characters : \((param?.writelength)!)"
         
         //비밀 여부
         if param?.secret == true {

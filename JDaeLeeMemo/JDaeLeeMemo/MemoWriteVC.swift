@@ -9,7 +9,7 @@ import UIKit
 
 class MemoWriteVC: UIViewController, UITextViewDelegate {
     var subject: String!              //제목 저장 객체
-    var writeLength: Int!             //글자 수
+    var writeLength: String!             //글자 수
     var secretState: Bool! = false    //비밀메모 상태
     var number: String! = nil         //비밀번호
     
@@ -95,7 +95,7 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         //내용을 최대 10자리까지 읽어 subject 변수에 저장
         let contents = textView.text as NSString
-        self.writeLength = contents.length
+        self.writeLength = String(describing: contents.length)
         let length = contents.length > 28 ? 28 : contents.length
         self.subject = contents.substring(with: NSRange(location: 0, length: length))
         
