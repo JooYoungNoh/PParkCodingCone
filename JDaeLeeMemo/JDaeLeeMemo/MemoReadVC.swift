@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemoReadVC: UIViewController {
+class MemoReadVC: UIViewController, UITextViewDelegate {
     //메모 데이터를 저장한 변수
     var param: MemoData?
     
@@ -19,6 +19,8 @@ class MemoReadVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.contents.delegate = self
+        
         //내용
         self.contents.text = param?.contents
         
@@ -54,6 +56,13 @@ class MemoReadVC: UIViewController {
             self.numberLabel.isHidden = true
             self.secretSwich.isHidden = true
         }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.barButton.title = "완료"
+        self.secretLabel.isHidden = false
+        self.numberLabel.isHidden = false
+        self.secretSwich.isHidden = false
     }
     
 }
