@@ -22,7 +22,7 @@ class MemoReadVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDeleg
     var subject: String!                 //제목 저장 객체
     var writeLength: String!             //글자 수
     var secretState: Bool! = false       //비밀메모 상태
-    var secretnumber: String! = nil      //비밀번호
+    var secretnumber: String! = ""      //비밀번호
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,17 +60,28 @@ class MemoReadVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDeleg
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel){ (_) in
                 self.secretSwich.isOn = false
                 self.secretState = false
-                self.secretnumber = nil
+                self.secretnumber = ""
             })
             
             alert.addAction(UIAlertAction(title: "OK", style: .default){ (_) in
+                //비밀 번호를 입력하지 않았을 경우
+                if alert.textFields?[0].text == ""{
+                    let alert1 = UIAlertController(title: nil, message: "초기 비밀번호를 입력해주세요.", preferredStyle: .alert)
+                    
+                    alert1.addAction(UIAlertAction(title: "OK", style: .cancel){ (_) in
+                        self.secretSwich.isOn = false
+                    })
+                    
+                    self.present(alert1, animated: false)
+                } else {
                 //레이블 변경
-                let secretText = alert.textFields?[0].text
-                self.secretLabel.text = "Secret Activation \n" + "비밀번호: \(secretText!)"
-                self.secretLabel.textColor = UIColor.blue
+                    let secretText = alert.textFields?[0].text
+                    self.secretLabel.text = "Secret Activation \n" + "비밀번호: \(secretText!)"
+                    self.secretLabel.textColor = UIColor.blue
                 
-                self.secretnumber = secretText
-                self.secretState = true
+                    self.secretnumber = secretText
+                    self.secretState = true
+                }
             })
             self.present(alert, animated: false)
         } else {
@@ -79,7 +90,7 @@ class MemoReadVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDeleg
             self.secretLabel.textColor = UIColor.red
             
             //저장할 변수
-            self.secretnumber = nil
+            self.secretnumber = ""
             self.secretState = false
         }
     }
