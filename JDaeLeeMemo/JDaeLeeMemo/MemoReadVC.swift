@@ -44,7 +44,7 @@ class MemoReadVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDeleg
     //MARK: 아웃렛 메소드
     @IBAction func writeEdit(_ sender: UIBarButtonItem){
         if self.barButton.title == "편집" {
-            self.barButton.title = "완료"
+            self.barButton.title = "수정"
             self.secretLabel.isHidden = false
             self.numberLabel.isHidden = false
             self.secretSwich.isHidden = false
@@ -61,7 +61,7 @@ class MemoReadVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDeleg
     //MARK: 델리게이트 메소드
     //텍스트 뷰
     func textViewDidBeginEditing(_ textView: UITextView) {
-        self.barButton.title = "완료"
+        self.barButton.title = "수정"
         self.secretLabel.isHidden = false
         self.numberLabel.isHidden = false
         self.secretSwich.isHidden = false
