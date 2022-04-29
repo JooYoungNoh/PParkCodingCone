@@ -51,8 +51,7 @@ class MemoWriteVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDele
         data.number = self.number
         
         //코어 데이터에 메모 데이터 추가
-        self.dao
-            .insert(data)
+        self.dao.insert(data)
         
         self.navigationController?.popViewController(animated: true)
     }

@@ -19,10 +19,10 @@ class MemoReadVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDeleg
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var barButton: UIBarButtonItem!
     
-    var subject: String!              //제목 저장 객체
+    var subject: String!                 //제목 저장 객체
     var writeLength: String!             //글자 수
-    var secretState: Bool!    //비밀메모 상태
-    var secretnumber: String!         //비밀번호
+    var secretState: Bool! = false       //비밀메모 상태
+    var secretnumber: String! = nil      //비밀번호
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +86,6 @@ class MemoReadVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDeleg
     
     
     @IBAction func writeEdit(_ sender: UIBarButtonItem){
-        
         if self.barButton.title == "편집" {
             self.barButton.title = "수정"
             self.secretLabel.isHidden = false
@@ -99,9 +98,13 @@ class MemoReadVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDeleg
             self.numberLabel.isHidden = true
             self.secretSwich.isHidden = true
         
-            self.dao.edit(objectID: (self.param?.objectID)!, title: (self.subject)!, contents: (self.contents.text)!, writelength: (self.writeLength)!, secret: (self.secretState)!, number: (self.secretnumber)!)
+            if self.contents.text != self.param?.contents {
+                self.dao.editText(objectID: (self.param?.objectID)!, title: (self.subject)!, contents: (self.contents.text)!, writelength: (self.writeLength)!)
+            }
             
-            print(self.secretnumber)
+            if self.secretnumber != self.param?.number{
+                self.dao.editSecretNumber(objectID: (self.param?.objectID)!, secret: (self.secretState)!, number: self.secretnumber)
+            }
         }
     }
     
