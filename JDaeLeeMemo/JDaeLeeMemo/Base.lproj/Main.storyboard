@@ -127,6 +127,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="via-ZY-ahs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="via-ZY-ahs" firstAttribute="trailing" secondItem="DvX-Jm-FCL" secondAttribute="trailing" constant="20" id="1E2-nW-IcG"/>
                             <constraint firstItem="DvX-Jm-FCL" firstAttribute="leading" secondItem="via-ZY-ahs" secondAttribute="leading" constant="20" id="1h7-Gh-qgF"/>
@@ -139,6 +140,9 @@
                             <constraint firstItem="KIn-t6-X8C" firstAttribute="leading" secondItem="via-ZY-ahs" secondAttribute="leading" constant="20" id="hI6-U8-dJh"/>
                             <constraint firstItem="nj4-dL-Dr4" firstAttribute="leading" secondItem="KIn-t6-X8C" secondAttribute="trailing" constant="22" id="lVq-Su-H5E"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="NML-cO-rt0" appends="YES" id="NJW-Uu-N0M"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="메모 작성" id="AOA-v3-ljk">
                         <barButtonItem key="rightBarButtonItem" title="저장" id="wLV-sU-2lD">
@@ -155,6 +159,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYL-86-ofG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="NML-cO-rt0">
+                    <connections>
+                        <outlet property="delegate" destination="yFA-YK-Juw" id="7ZC-oR-6F2"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="956.92307692307691" y="752.84360189573454"/>
         </scene>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemoWriteVC: UIViewController, UITextViewDelegate {
+class MemoWriteVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     var subject: String!              //제목 저장 객체
     var writeLength: String!             //글자 수
     var secretState: Bool! = false    //비밀메모 상태
@@ -92,7 +92,7 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
         }
     }
     
-    //MARK: 텍스트 뷰 메소드
+    //MARK: 델리게이트 메소드
     //사용자가 텍스트 뷰에 입력 시 호출되는 메소드
     func textViewDidChange(_ textView: UITextView) {
         //내용을 최대 10자리까지 읽어 subject 변수에 저장
@@ -102,8 +102,11 @@ class MemoWriteVC: UIViewController, UITextViewDelegate {
         self.subject = contents.substring(with: NSRange(location: 0, length: length))
         
         self.numberLabel.text = "Number of characters : \(String(describing: contents.length))"
-        
-        
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 
 }
