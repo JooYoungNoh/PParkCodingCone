@@ -14,7 +14,7 @@ class MemoData{
     var regdate: Date?          //작성일자
     var writelength: String?       //글자 수
     var secret: Bool?           //비밀 여부
-    var number: String?         //비밀번호
+    var number: String!         //비밀번호
     
     var objectID: NSManagedObjectID?        //MemoMO 객체를 참조하기 위한 속성
     

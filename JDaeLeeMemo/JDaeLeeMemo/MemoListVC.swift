@@ -18,10 +18,6 @@ class MemoListVC: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         searchBar.enablesReturnKeyAutomatically = false
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        
-        view.addGestureRecognizer(tap)
-        
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
         self.tableView.allowsSelectionDuringEditing = true
@@ -32,10 +28,6 @@ class MemoListVC: UITableViewController, UISearchBarDelegate {
         
         self.appDelegate.memolist = self.dao.fetch()
         self.tableView.reloadData()
-    }
-    
-    @objc func dismissKeyboard(){
-        view.endEditing(true)
     }
 
     // MARK: - Table view data source
