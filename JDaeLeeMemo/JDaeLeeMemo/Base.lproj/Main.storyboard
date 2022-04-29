@@ -16,14 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="키워드를 입력하세요" id="iit-4H-MJS">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="113-tm-KfR" id="wbY-aL-2Vk"/>
+                            </connections>
+                        </searchBar>
                         <view key="tableFooterView" contentMode="scaleToFill" id="q78-Ux-lbY">
-                            <rect key="frame" x="0.0" y="127.33333206176758" width="390" height="44"/>
+                            <rect key="frame" x="0.0" y="722.33333206176758" width="390" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" rowHeight="60" id="Bjg-pH-kH6" customClass="MemoCell" customModule="JDaeLeeMemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="60"/>
+                                <rect key="frame" x="0.0" y="88.666666030883789" width="390" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bjg-pH-kH6" id="AKY-uI-7am">
                                     <rect key="frame" x="0.0" y="0.0" width="361.33333333333331" height="60"/>
@@ -74,6 +82,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="iit-4H-MJS" id="buY-aG-eI8"/>
                         <segue destination="0vj-th-8aU" kind="show" id="qdA-P7-cNl"/>
                     </connections>
                 </tableViewController>

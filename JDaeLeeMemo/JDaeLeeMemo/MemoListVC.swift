@@ -7,13 +7,17 @@
 
 import UIKit
 
-class MemoListVC: UITableViewController {
+class MemoListVC: UITableViewController, UISearchBarDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     lazy var dao = MemoDAO()
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.enablesReturnKeyAutomatically = false
+        
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
         self.tableView.allowsSelectionDuringEditing = true
@@ -99,5 +103,12 @@ class MemoListVC: UITableViewController {
             self.appDelegate.memolist.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let keyword = searchBar.text
+        
+        self.appDelegate.memolist = self.dao.fetch(keyword: keyword)
+        self.tableView.reloadData()
     }
 }
