@@ -54,6 +54,7 @@
                                         <constraint firstItem="PUT-9J-sZr" firstAttribute="leading" secondItem="AKY-uI-7am" secondAttribute="leadingMargin" constant="5" id="xcW-3c-nYa"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.96780074146336137" blue="0.78528862372517472" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="Y5K-nm-cjv" id="Nb5-eu-mGa"/>
                                     <outlet property="titleLabel" destination="PUT-9J-sZr" id="BoA-dP-hP1"/>
