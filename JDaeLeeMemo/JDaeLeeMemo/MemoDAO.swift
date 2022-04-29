@@ -40,6 +40,9 @@ class MemoDAO {
                 data.title = record.title
                 data.contents = record.contents
                 data.regdate = record.regdate! as Date
+                data.writelength = record.writelength
+                data.secret = record.secret
+                data.number = record.number
                 data.objectID = record.objectID
                 
 
@@ -61,6 +64,9 @@ class MemoDAO {
         object.title = data.title
         object.contents = data.contents
         object.regdate = data.regdate!
+        object.writelength = data.writelength
+        object.secret = data.secret!
+        object.number = data.number
         
         // 3. 영구 저장소에 변경 사항을 반영한다.
         do {
