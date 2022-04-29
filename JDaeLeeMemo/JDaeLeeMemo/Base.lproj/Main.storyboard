@@ -201,6 +201,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wrd-N4-G19"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Ckj-3f-W6f" firstAttribute="leading" secondItem="BAI-Si-iHS" secondAttribute="trailing" constant="22" id="9oh-Uh-VeS"/>
                             <constraint firstItem="XYu-1Q-DKy" firstAttribute="top" secondItem="Wrd-N4-G19" secondAttribute="top" constant="15" id="LtB-DD-rJN"/>
@@ -213,6 +214,9 @@
                             <constraint firstItem="Wrd-N4-G19" firstAttribute="trailing" secondItem="ltm-DN-cef" secondAttribute="trailing" constant="20" id="f4m-6G-xSe"/>
                             <constraint firstItem="BAI-Si-iHS" firstAttribute="leading" secondItem="Wrd-N4-G19" secondAttribute="leading" constant="20" id="g6x-DZ-5KV"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ena-vR-45e" appends="YES" id="qvh-FE-mJ2"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="메모 내용" id="cO3-J6-ZLI">
                         <barButtonItem key="rightBarButtonItem" title="편집" id="FBd-gL-qHz">
@@ -230,6 +234,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgX-H9-XUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ena-vR-45e">
+                    <connections>
+                        <outlet property="delegate" destination="0vj-th-8aU" id="od2-Fv-lCG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1682" y="33"/>
         </scene>

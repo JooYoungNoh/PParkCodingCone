@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MemoReadVC: UIViewController, UITextViewDelegate {
+class MemoReadVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     //메모 데이터를 저장한 변수
     var param: MemoData?
     
@@ -58,11 +58,18 @@ class MemoReadVC: UIViewController, UITextViewDelegate {
         }
     }
     
+    //MARK: 델리게이트 메소드
+    //텍스트 뷰
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.barButton.title = "완료"
         self.secretLabel.isHidden = false
         self.numberLabel.isHidden = false
         self.secretSwich.isHidden = false
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
 }
