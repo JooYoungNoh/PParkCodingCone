@@ -191,6 +191,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YXo-p6-pyR"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="changeSwich:" destination="0vj-th-8aU" eventType="valueChanged" id="SFe-93-tTe"/>
+                                </connections>
                             </switch>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secret Deactivation" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckj-3f-W6f">
                                 <rect key="frame" x="212" y="103" width="99" height="12"/>

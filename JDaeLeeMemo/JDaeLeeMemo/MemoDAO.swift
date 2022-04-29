@@ -72,6 +72,7 @@ class MemoDAO {
         do {
             try self.context.save()
         } catch let e as NSError {
+            context.rollback()
             NSLog("An error has occurred : %s", e.localizedDescription)
         }
     }
@@ -86,8 +87,32 @@ class MemoDAO {
             try self.context.save()
             return true
         } catch let e as NSError {
+            context.rollback()
             NSLog("An error has occurred : %s", e.localizedDescription)
             return false
         }
+    }
+    
+    func edit(objectID: NSManagedObjectID, title: String, contents: String, writelength: String, secret: Bool, number: String) -> Bool{
+        let object = self.context.object(with: objectID)
+        
+        //관리 객체 값 수정
+        object.setValue(title, forKey: "title")
+        object.setValue(contents, forKey: "contents")
+        object.setValue(Date(), forKey: "regdate")
+        object.setValue(writelength, forKey: "writelength")
+        object.setValue(secret, forKey: "secret")
+        object.setValue(number, forKey: "number")
+        
+        do {
+            // 삭제된 내역을 영구저장소에 반영한다.
+            try self.context.save()
+            return true
+        } catch let e as NSError {
+            context.rollback()
+            NSLog("An error has occurred : %s", e.localizedDescription)
+            return false
+        }
+        
     }
 }
